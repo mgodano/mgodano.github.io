@@ -36,7 +36,15 @@
     </div>
 
     <div id="main" role="main" class="container">
-      {{ content }}
+      {% for post in site.posts %}
+    <article class="post">
+      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+      {% if post.image %}
+        <img src="{{ post.image }}" alt="Post Image" />
+      {% endif %}
+      <!-- Other post content here -->
+    </article>
+  {% endfor %}
     </div>
 
     <div class="wrapper-footer">
