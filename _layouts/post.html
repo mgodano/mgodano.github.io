@@ -12,10 +12,9 @@ layout: default
     {% endif %}
     {% for category in categories %}
       {% if category == 'Bunka' %}
-        <a href="{{site.baseurl}}/Bunka">文化</a>
-      {% else %}
-        {% if category == 'Kotowaza' %}
-        <a href="{{site.baseurl}}/Kotowaza">ことわざ</a>
+        <a href="{{site.baseurl}}/{{category|slugize}}">文化</a>
+      {% elsif category == 'Kotowaza' %}
+        <a href="{{site.baseurl}}/{{category|slugize}}">ことわざ</a>
       {% else %}
         <a href="{{site.baseurl}}/{{category|slugize}}">{{category}}</a>
       {% endif %}
@@ -30,4 +29,3 @@ layout: default
   </div>
   {% include disqus.html %}
 </article>
-
